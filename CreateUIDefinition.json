@@ -183,7 +183,7 @@
             },
             "osPlatform": "Windows",
             "count": "[steps('Size').FEsCount]",
-            "visible": "[and(equals(steps('Size').InstancesNumber,'Multiple'),equals(steps('Size').StorageType,'HHD'))]"
+            "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
           },
           {
             "name": "SinglevmSizeHHD",
@@ -217,7 +217,7 @@
             },
             "osPlatform": "Windows",
             "count": 1,
-            "visible": "[and(equals(steps('Size').InstancesNumber,'Standalone'),equals(steps('Size').StorageType,'HHD'))]"
+            "visible": "[equals(steps('Size').InstancesNumber,'Standalone')]"
           }
         ]
       },
@@ -253,7 +253,7 @@
         },
         "osPlatform": "Windows",
         "count": "[steps('Size').FEsCount]",
-        "visible": "[and(equals(steps('Size').InstancesNumber,'Multiple'),equals(steps('Size').StorageType,'SSD'))]"
+        "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
       },
       {
         "name": "SinglevmSizeSSD",
@@ -300,7 +300,7 @@
         },
         "osPlatform": "Windows",
         "count": 1,
-        "visible": "[and(equals(steps('Size').InstancesNumber,'Standalone'),equals(steps('Size').StorageType,'SSD'))]"
+        "visible": "[equals(steps('Size').InstancesNumber,'Standalone')]"
       }
     ]
       },
