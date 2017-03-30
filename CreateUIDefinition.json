@@ -61,6 +61,26 @@
           "hideConfirmation": true
         }
       },
+      {
+        "constraints": {
+          "allowedValues": [
+            {
+              "label": "Single Instance",
+              "value": "Single"
+            },
+            {
+              "label": "Multiple Instances",
+              "value": "Multiple"
+            }
+          ]
+        },
+        "defaultValue": "Single",
+        "label": "Number of instances",
+        "name": "InstancesNumber",
+        "toolTip": "Select single or Multiple instances",
+        "type": "Microsoft.Common.OptionsGroup",
+        "visible": true
+      }
     ],
     "steps": [
       {
