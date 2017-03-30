@@ -183,7 +183,7 @@
             },
             "osPlatform": "Windows",
             "count": "[steps('Size').FEsCount]",
-            "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
+            "visible": "[and(equals(steps('Size').InstancesNumber,'Multiple'),equals(steps('Size').StorageType,'HHD'))]"
           },
           {
             "name": "SinglevmSizeHHD",
