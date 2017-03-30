@@ -60,24 +60,25 @@
         "options": {
           "hideConfirmation": true
         },
-        {  
-          "name": "InstancesNumber",  
-          "type": "Microsoft.Common.OptionsGroup",  
-          "label": "Some options group",  
-          "defaultValue": "Single",  
-          "toolTip": "Select single or multiple instances",  
-          "constraints": {    
-              "allowedValues": [     
-              {        
-                  "label": "Single Instance",        
-                  "value": "Single"      
-              },      
-              {        
-                  "label": "Multiple Instances",        
-                  "value": "Multiple"      
-              }   
-             ]  
-          },  "visible": true}
+        {
+          "name": "InstancesNumber",
+          "type": "Microsoft.Common.OptionsGroup",
+          "label": "Some options group",
+          "defaultValue": "Single",
+          "toolTip": "Select single or multiple instances",
+          "constraints": {
+              "allowedValues": [
+              {
+                  "label": "Single Instance",
+                  "value": "Single"
+              },
+              {
+                  "label": "Multiple Instances",
+                  "value": "Multiple"
+              }
+             ]
+          },  "visible": true
+        }
       }
     ],
     "steps": [
