@@ -61,26 +61,6 @@
           "hideConfirmation": true
         }
       },
-	  {
-		"name": "InstancesNumber",
-		"type": "Microsoft.Common.OptionsGroup",
-		"label": "Some options group",
-		"defaultValue": "Single",
-		"toolTip": "",
-			"constraints": {
-				"allowedValues": [
-				{
-					"label": "Single Instance",
-					"value": "Single"
-				},
-				{
-					"label": "Multiple Instances",
-					"value": "Multiple"
-				}
-				]
-			},
-		"visible": true
-		}
     ],
     "steps": [
       {
