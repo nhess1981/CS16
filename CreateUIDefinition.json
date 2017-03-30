@@ -106,7 +106,7 @@
                 }
               ]
             },
-            "defaultValue": "HHD",
+            "defaultValue": "HDD",
             "required": true,
             "label": "VM disk type",
             "name": "StorageType",
@@ -139,7 +139,7 @@
             "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
           },
           {
-            "name": "MultiplevmSizeHHD",
+            "name": "MultiplevmSizeHDD",
             "type": "Microsoft.Compute.SizeSelector",
             "label": "Virtual machine size",
             "toolTip": "The size of the virtual machine.",
