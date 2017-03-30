@@ -70,12 +70,55 @@
           "preValidation": "Choose virtual machine size",
           "postValidation": "Done"
         },
-              {        "constraints": {          "allowedValues": [            {              "label": "Single Instance",              "value": "Single"            },            {              "label": "Multiple Instances",              "value": "Multiple"            }          ]        },        "defaultValue": "Single",        "label": "Number of instances",        "name": "InstancesNumber",        "toolTip": "Select single or Multiple instances",        "type": "Microsoft.Common.OptionsGroup",        "visible": true      }
         "bladeTitle": "VM Size",
         "elements": [
-
           {
-            "name": "vmSize",
+            "constraints": {
+              "allowedValues": [
+                {
+                  "label": "Single Instance",
+                  "value": "Standalone"
+                },
+                {
+                  "label": "Multiple Instances",
+                  "value": "Multiple"
+                }
+              ]
+            },
+            "defaultValue": "Standalone",
+            "required": true,
+            "label": "Number of instances",
+            "name": "InstancesNumber",
+            "toolTip": "Select single or Multiple instances",
+            "type": "Microsoft.Common.OptionsGroup",
+            "visible": true
+          },
+          {
+            "name": "FEsCount",
+            "type": "Microsoft.Common.DropDown",
+            "label": "Number of FEs",
+            "defaultValue": "3",
+            "toolTip": "Number of Content Server Front End Servers",
+            "constraints": {
+              "allowedValues": [
+                {
+                  "label": "1",
+                  "value": 1
+                },
+                {
+                  "label": "2",
+                  "value": 2
+                },
+                {
+                  "label": "3",
+                  "value": 3
+                }
+              ]
+            },
+            "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
+          },
+          {
+            "name": "MultiplevmSize",
             "type": "Microsoft.Compute.SizeSelector",
             "label": "Virtual machine size",
             "toolTip": "The size of the virtual machine.",
@@ -117,7 +160,56 @@
                 "Standard_F16"
               ]
             },
-            "osPlatform": "Windows"
+            "osPlatform": "Windows",
+            "count": "[steps('Size').FEsCount]",
+            "visible": "[equals(steps('Size').InstancesNumber,'Multiple')]"
+          },
+          {
+            "name": "SinglevmSize",
+            "type": "Microsoft.Compute.SizeSelector",
+            "label": "Virtual machine size",
+            "toolTip": "The size of the virtual machine.",
+            "recommendedSizes": [
+              "Standard_A3",
+              "Standard_A4",
+              "Standard_D3"
+            ],
+            "constraints": {
+              "allowedSizes": [
+                "Standard_A2",
+                "Standard_A3",
+                "Standard_A4",
+                "Standard_A5",
+                "Standard_A6",
+                "Standard_A7",
+                "Standard_A8",
+                "Standard_A9",
+                "Standard_A10",
+                "Standard_A11",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4",
+                "Standard_D12",
+                "Standard_D13",
+                "Standard_D14",
+                "Standard_D2_v2",
+                "Standard_D3_v2",
+                "Standard_D4_v2",
+                "Standard_D5_v2",
+                "Standard_D11_v2",
+                "Standard_D12_v2",
+                "Standard_D13_v2",
+                "Standard_D14_v2",
+                "Standard_D15_v2",
+                "Standard_F2",
+                "Standard_F4",
+                "Standard_F8",
+                "Standard_F16"
+              ]
+            },
+            "osPlatform": "Windows",
+            "count": 1,
+            "visible": "[equals(steps('Size').InstancesNumber,'Standalone')]"
           }
         ]
       },
